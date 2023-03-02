@@ -1,0 +1,48 @@
+.article-details {
+    &-title {
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+        text-align: center;
+        margin: 1rem 0;
+        @media (min-width:768px) {
+            font-size: 1.8rem;
+        }
+        @media (min-width:992px) {
+            font-size: 2rem;
+        }
+    }
+    &-image {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        img {
+            width: 100%;
+            height: 100%;
+            @media (min-width:768px) {
+                width: 50%;
+                height: 50%;
+            }
+        }
+    }
+    &-description {
+        margin: 1rem auto;
+        line-height: 1.5;
+        font-size: 1rem;
+        @media (min-width:768px) {
+            font-size: 1.5rem;
+        }
+    }
+    &-authors-card {
+        margin: 2rem auto;
+        text-align: center;
+        @media (min-width:768px) {
+            text-align: right;
+        }
+        &-director {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin: 1rem 0 0;
+        }
+    }
+}

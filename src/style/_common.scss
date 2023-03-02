@@ -1,0 +1,43 @@
+.component {
+    &-container{
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap:50px;
+        margin: 5rem auto;
+        @media (min-width:576px) {
+            grid-template-columns: auto auto;
+            justify-content: space-evenly;
+        }
+        @media (min-width:768px) {
+            grid-template-columns: auto auto auto;
+        }
+        &-card{
+            color: #fff;
+            background: #162313;
+            text-decoration: none;
+            padding: 2rem;
+            border-radius: 10px;
+            border:1px solid #fff;
+            transition: all 0.3s linear;
+            box-shadow: 0px 5px 7px #162313;
+            &-title {
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                text-align: center;
+            }
+            &-image {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            &-description {
+                text-align: center;
+                margin: 2rem auto 0;
+                line-height: 1.5;
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}

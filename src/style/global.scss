@@ -1,4 +1,59 @@
-.main{
-    background-color: aqua;
-    color: yellow;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  background: #C1E1C1;
+  color: #162313;
+  font-family: 'Open Sans', sans-serif;
+  main {
+    padding: 0 5%;
+    margin: 3rem auto;
+    .Heading {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      @media (min-width: 576px) {
+        font-size: 2.5rem;
+      }
+      &-wrapper {
+        margin: 5rem 0;
+      }
+    }
+  }
+  .main{
+    &-title{
+      font-size: 1.8rem;
+      @media (min-width:768px) {
+        font-size: 2rem;
+      }
+    }
+    &-description {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      @media (min-width:576px) {
+        font-size: 1.8rem;
+      }
+      @media (min-width:768px) {
+        font-size: 2rem;
+      }
+    }
+  }
+  .home-btn{
+    background: #162313;
+    padding: 1rem 1.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    border:1px solid #fff;
+    box-shadow: 0px 5px 7px #162313;
+    a{
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase
+    }
+  }
 }
+
+@import "./common";
+@import './genre-details';
+@import './articles-details';
+@import './author-details';
