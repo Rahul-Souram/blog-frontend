@@ -14,6 +14,10 @@ const strapiConfig = {
 };
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: 'MovieBlog',
+    description: 'A website to demontrate how the blogs works',
+},
   plugins: [`gatsby-plugin-sass`,
   `gatsby-plugin-sharp`,
   {
@@ -24,6 +28,15 @@ module.exports = {
     resolve: `gatsby-plugin-layout`,
     options: {
       component: require.resolve(`./src/Layout/index.js`),
+    },
+  },
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `gatsby-starter-default`,
+      short_name: `starter`,
+      start_url: `/`,
+      icon: `src/images/movieblog.png`, // This path is relative to the root of the site.
     },
   },
 ],

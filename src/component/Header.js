@@ -23,7 +23,7 @@ const Header = () => {
         <div className="header_container">
           <div className="logo">
             <Link to="/" onClick={() => setIsMenuOpen(false)}>
-              MoviesBlog
+              MovieBlog
             </Link>
           </div>
           <div className="menu-bar">

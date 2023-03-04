@@ -1,9 +1,12 @@
 import React from 'react'
+import {Link} from 'gatsby'
 
 const Footer = () => {
   return (
     <div className='footer-container'>
-      MoviesBlog
+      <Link to='/'  className="Footer-Link">
+      MovieBlog
+      </Link>
     </div>
   )
 }
