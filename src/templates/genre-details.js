@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import CommonComponent from '../../component/common-component';
+import CommonComponent from '../component/common-component';
 
 const GenreDetails = ({ data }) => {
   const { title, description } = data.strapiGenre

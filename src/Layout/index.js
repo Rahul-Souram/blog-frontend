@@ -1,11 +1,13 @@
 import React from "react"
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const index = ({ children }) => {
   return (
     <>
-      <div>Header</div>
+      <Header />
       <main>{children}</main>
-      <div>Footer</div>
+      <Footer />
     </>
   )
 }

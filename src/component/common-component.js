@@ -21,7 +21,7 @@ const CommonComponent = ({ data }) => {
     <div className="component-container">
       {data.map(item => {
         const { title, description, slug, image } = item
-
+        
         let Icon
         switch (image) {
           case "Annabelle":

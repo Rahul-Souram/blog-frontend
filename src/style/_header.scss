@@ -1,0 +1,132 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    &.scrolled {
+        opacity: 0.9;
+      }
+    &_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 5%;
+      background: #162313;
+      .logo {
+        z-index: 999;
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: #fff;
+          font-size: 1.5rem;
+          @media (min-width:576px) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .menu {
+      li {
+        margin-left: 1rem;
+        @media (min-width:576px) {
+          margin-left: 2rem;
+        }
+      }
+      a {
+        color: #fff;
+        font-size: 0.9rem;
+        line-height: 1.1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        @media screen and (max-width:360px) {
+          font-size: 0.7rem;
+        }
+        @media (min-width:576px) {
+          font-size: 1.1rem;
+        }
+        &.highlight {
+          color: blue;
+          font-weight: 600;
+        }
+      }
+      .logo {
+        opacity: 0;
+      }
+      svg {
+        padding-left: 0.5rem;
+        width: 6px;
+        @media (min-width:576px) {
+          width: 9px;
+        }
+      }
+    }
+    &.active {
+      opacity: 1;
+      .hamburger-menu {
+        span {
+          background: #0e87c1;
+        }
+      }
+      .menu {
+        right: 0;
+        transition: all 1s ease;
+        .nav-container {
+          width: 100%;
+        }
+        .logo {
+          padding: 30px 0;
+          opacity: 1;
+          transition: opacity 1s;
+          svg {
+            g {
+              fill: gray;
+            }
+          }
+        }
+        ul {
+          width: 100%;
+          li {
+            margin: 0 0 30px;
+            &:last-child {
+              margin: 0;
+            }
+            a {
+              font-size: 30px;
+              font-weight: 500;
+              color: #0e87c1;
+              @media (min-width:576px) {
+                font-size: 40px;
+              }
+              @media (min-width:992px){
+                font-size: 55px;
+              }
+              @media (min-width:1200px) {
+                font-size: 70px;
+              }
+            }
+          }
+        }
+      }
+      .hamburger-menu {
+        span:first-child {
+          animation: ease 0.7s top forwards;
+        }
+        span:nth-child(2) {
+          animation: ease 0.7s scaled forwards;
+        }
+        span:nth-child(3) {
+          animation: ease 0.7s bottom forwards;
+        }
+      }
+    }
+  }
+
+  .footer-container{
+    background: #162313;
+    padding: 1.5rem 5%;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+  }

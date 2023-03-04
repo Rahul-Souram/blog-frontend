@@ -1,0 +1,205 @@
+.menu {
+    &-bar {
+      z-index: 999;
+      button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        span{
+          border-radius: 10px;
+          height: 3px;
+          margin: 3px 0;
+          transition: 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+          background-color: #fff;
+        }
+        span:nth-of-type(1) {
+          width: 25px;
+        }
+        span:nth-of-type(2) {
+          width: 33px;
+        }
+        span:nth-of-type(3) {
+          width: 20px;
+        }
+        &.active {
+            span {
+              margin: 0;
+            }
+            span:nth-of-type(1) {
+              width: 30px;
+              transform-origin: center;
+              transform: rotatez(-45deg);
+            }
+            span:nth-of-type(2) {
+              opacity: 0;
+            }
+            span:nth-of-type(3) {
+              width: 30px;
+              transform-origin: center;
+              transform: rotatez(45deg) translate(-4px,-5px);
+            }
+        }
+      }
+    }
+    &-list {
+      text-align: center;
+      @media (min-width:992px) {
+        text-align: right;
+      }
+      position: relative;
+      z-index: 999;
+      &-item {
+        z-index: 999;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        list-style: none;
+        a {
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            font-weight: 600;
+            color: gray;
+          }
+        }
+      }
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .astronaut-svg{
+          position: absolute;
+          width: 20%;
+          left: 0;
+          bottom: -55%;
+  
+          @media (min-width:992px){
+            left:0;
+            bottom:-30%;
+            width: 8%;
+          }
+          @media (min-width:1200px) {
+            bottom:-40%;
+          }
+        }
+        .planet-svg{
+          position: absolute;
+          right:10%;
+          top:-57%;
+          width: 12%;
+          @media (min-width:576px) {
+            right: 40%;
+          }
+          @media (min-width:768px) {
+            right:60%;
+          }
+          @media (min-width:992px) {
+            right: 30%;
+            top:-50%;
+            width: 25%;
+          }
+        }
+        .line-svg{
+          position: absolute;
+          left: 3%;
+          bottom: -15%;
+          visibility: hidden;
+          width: 28%;
+          @media (min-width:992px) {
+            visibility: visible;
+            width:35%;
+          }
+        }
+        .line-mobile-svg{
+          position: absolute;
+          height: 120%;
+          left: 2%;
+          top:-7%;
+          @media (min-width:992px) {
+            visibility: hidden;
+          }
+        }
+        .css-svg{
+          position: absolute;
+          left: 10%;
+          width: 12%;
+          top: 2%;
+          @media (min-width:576px) {
+            left: 3%;
+          }
+          @media (min-width:768px) {
+            left: 6%;
+          }
+          @media (min-width:992px) {
+            left: 30%;
+            width: 5%;
+            top: 65%;
+          }
+          @media (min-width:1200px) {
+            left: 35%;
+            top: 65%;
+          }
+        }
+        .js-svg{
+          position: absolute;
+          left: 74%;
+          width: 12%;
+          top: 92%;
+          @media (min-width:400px) {
+            left: 55%;
+          }
+          @media (min-width:576px) {
+            left: 43%;
+            top: 90%;
+          }
+          @media (min-width:768px) {
+            left: 28%;
+          }
+          @media (min-width:992px) {
+            left: 15%;
+            width: 5%;
+            top: 20%;
+          }
+        }
+        .astronaut-sm-svg{
+          position: absolute;
+          visibility: hidden;
+          @media (min-width:992px) {
+            left: 37%;
+            width: 5%;
+            top: -15%;
+            visibility: visible;
+  
+          }
+          @media (min-width:1200px) {
+            left: 35%;
+          }
+          @media (min-width:1200px) {
+            top: -20%;
+          }
+        }
+      }
+    }
+    &-wrapper {
+      background: black;
+      position: fixed;
+      transition: 1.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      &.inactive {
+        right: -110%;
+      }
+      &.active {
+        right: 0;
+      }
+    }
+  }
+  

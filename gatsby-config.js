@@ -9,8 +9,8 @@ require('dotenv').config({
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN ,
-  collectionTypes: ['article', 'genre', 'author'],
-  singleTypes: ['homepage'],
+  collectionTypes: ['article', 'genre', 'author', 'page'],
+  singleTypes: ['homepage', 'article-page', 'author-page', 'genre-page'],
 };
 module.exports = {
   /* Your site config here */
