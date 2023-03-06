@@ -3,9 +3,6 @@
     width: 100%;
     z-index: 999;
     top: 0;
-    &.scrolled {
-        opacity: 0.9;
-      }
     &_container {
       display: flex;
       align-items: center;
@@ -19,6 +16,7 @@
           text-decoration: none;
           color: #fff;
           font-size: 1.5rem;
+          font-weight: bold;
           @media (min-width:576px) {
             font-size: 2rem;
           }
@@ -52,13 +50,6 @@
       }
       .logo {
         opacity: 0;
-      }
-      svg {
-        padding-left: 0.5rem;
-        width: 6px;
-        @media (min-width:576px) {
-          width: 9px;
-        }
       }
     }
     &.active {
@@ -106,17 +97,6 @@
               }
             }
           }
-        }
-      }
-      .hamburger-menu {
-        span:first-child {
-          animation: ease 0.7s top forwards;
-        }
-        span:nth-child(2) {
-          animation: ease 0.7s scaled forwards;
-        }
-        span:nth-child(3) {
-          animation: ease 0.7s bottom forwards;
         }
       }
     }
