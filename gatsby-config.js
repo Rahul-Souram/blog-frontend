@@ -10,7 +10,7 @@ const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL,
   accessToken: process.env.STRAPI_TOKEN ,
   collectionTypes: ['article', 'genre', 'author', 'page'],
-  singleTypes: ['homepage', 'article-page', 'author-page', 'genre-page'],
+  singleTypes: ['homepage', 'article-page', 'author-page', 'genre-page', 'global'],
 };
 module.exports = {
   /* Your site config here */

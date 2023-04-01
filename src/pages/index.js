@@ -1,20 +1,21 @@
 import React from "react"
 import '../style/global.scss';
-import { graphql, Link } from "gatsby"
-import { Helmet } from 'react-helmet';
+import { graphql, Link } from "gatsby";
 import CommonComponent from '../component/common-component';
+import Seo from '../component/seo';
 
 export default function Home({data}) {
-const { title,description } = data.strapiHomepage;
+const { title,description, mainImage } = data.strapiHomepage;
 const genres = data.allStrapiGenre.nodes;
 const seo = data.site.siteMetadata;
   return(
     <>
-    <Helmet>
-      <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
-    </Helmet><div className="main">
+    <Seo seo={seo} />
+    <div className="main">
         <h2 className="main-title">{title}</h2>
+        <div className="main-image">
+          <img src={mainImage?.url} alt={title} />
+        </div>
         <div className="main-description">{description.data.description}</div>
         <div className="Heading-wrapper container">
           <Link to='/genres' className="Heading-Link">
@@ -30,6 +31,9 @@ export const query = graphql`
   query {
     strapiHomepage {
       title
+      mainImage {
+        url
+      }
       description {
         data {
           description

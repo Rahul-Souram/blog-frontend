@@ -1,13 +1,17 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import CommonComponent from '../component/common-component';
+import Seo from "../component/seo";
 
 const GenreDetails = ({ data }) => {
   const { title, description } = data.strapiGenre
   const articles = data.strapiGenre.articles;
+  const { seo } = data.strapiGlobal;
 
   return (
-    <div className="genre-details-container" key={title}>
+    <>
+      <Seo seo={seo}/>
+      <div className="genre-details-container" key={title}>
       <h3 className="genre-details-title">{title}</h3>
       <div className="genre-details-description">{description.data.description}</div>
       <CommonComponent data={articles} PageSLug="articles"/>
@@ -15,6 +19,8 @@ const GenreDetails = ({ data }) => {
       <Link to='/'>Back to Home</Link>
       </div>
     </div>
+    </>
+
   )
 }
 
@@ -41,6 +47,12 @@ export const query = graphql`
             description
           }
         }
+      }
+    }
+    strapiGlobal {
+      seo {
+        metaTitle
+        metaDescription
       }
     }
   }

@@ -1,16 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import ReactMarkdown from "react-markdown"
+import Seo from "../component/seo";
 
 const ArticleDetails = ({ data }) => {
   const { title, description, author, image } = data.strapiArticle
   const Authortitle = author.title
   const AuthorImage = author.image
-
-  console.log(image)
+  const { seo } = data.strapiGlobal;
 
   return (
-    <div className="article-details-container" key={title}>
+    <>
+      <Seo seo={seo}/>
+        <div className="article-details-container" key={title}>
       <div className="article-details-image">
         <img src={image?.url} alt={image} />
       </div>
@@ -28,6 +30,8 @@ const ArticleDetails = ({ data }) => {
       <Link to='/'>Back to Home</Link>
       </div>
     </div>
+    </>
+
   )
 }
 
@@ -51,6 +55,12 @@ export const query = graphql`
         image {
           url
         }
+      }
+    }
+    strapiGlobal {
+      seo {
+        metaTitle
+        metaDescription
       }
     }
   }

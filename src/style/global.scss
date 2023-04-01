@@ -24,6 +24,13 @@ body {
     }
   }
   .main{
+    &-image {
+      width: 100%;
+      margin: 2rem auto;
+      img {
+      width: 100%;
+      }
+    }
     &-title{
       font-size: 1.8rem;
       @media (min-width:768px) {
