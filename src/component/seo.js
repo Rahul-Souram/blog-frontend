@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import '../style/global.scss';
 
 const Seo = ({seo}) => {
   return (
