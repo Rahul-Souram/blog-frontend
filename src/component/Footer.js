@@ -7,6 +7,7 @@ const Footer = () => {
       <Link to='/'  className="Footer-Link">
       MovieBlog
       </Link>
+      <div  className="Footer-Link-copy"> Copyright &copy; MovieBlog</div>
     </div>
   )
 }

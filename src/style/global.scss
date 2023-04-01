@@ -58,6 +58,10 @@ body {
   .Footer-Link{
     color: #fff;
     text-decoration: none;
+    &-copy {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
   }
 }
 

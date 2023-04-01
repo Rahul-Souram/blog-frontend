@@ -10,6 +10,7 @@ const Authors = ({data}) => {
     <div>
       <div className="Heading-wrapper">
         <h3 className="Heading">{Author.title}</h3>
+      <div className="authors-details-description">{Author.description.data.description}</div>
         <CommonComponent data={Authors} PageSLug={Author.pageSlug} />
       </div>
     </div>
@@ -24,6 +25,11 @@ query MyQuery {
   strapiAuthorPage {
     title
     pageSlug
+    description {
+      data {
+        description
+      }
+    }
   }
     allStrapiAuthor {
       nodes {
@@ -34,6 +40,9 @@ query MyQuery {
           }
         }
         slug
+        image {
+          url
+        }
       }
     }
   }

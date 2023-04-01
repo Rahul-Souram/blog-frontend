@@ -5,11 +5,13 @@ import CommonComponent from '../component/common-component';
 
 const Genres = ({data}) => {
     const genres = data.allStrapiGenre.nodes;
-    const Genre = data.strapiGenrePage
+    const Genre = data.strapiGenrePage;
+
   return (
     <div>
       <div className="Heading-wrapper">
         <h3 className="Heading">{Genre.title}</h3>
+        <div className="authors-details-description">{Genre.description.data.description}</div>
         <CommonComponent data={genres} PageSLug={Genre.pageSlug} />
       </div>
     </div>
@@ -24,6 +26,11 @@ query MyQuery {
   strapiGenrePage {
     title
     pageSlug
+    description {
+      data {
+        description
+      }
+    }
   }
     allStrapiGenre {
       nodes {
@@ -34,6 +41,9 @@ query MyQuery {
           }
         }
         slug
+        image {
+          url
+        }
       }
     }
   }

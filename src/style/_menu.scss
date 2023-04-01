@@ -41,9 +41,6 @@
     }
     &-list {
       text-align: center;
-      @media (min-width:992px) {
-        text-align: right;
-      }
       position: relative;
       z-index: 999;
       &-item {

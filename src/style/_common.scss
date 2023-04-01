@@ -10,6 +10,8 @@
         }
         @media (min-width:992px) {
             grid-template-columns: auto auto auto;
+        grid-gap:20px;
+
         }
         &-card{
             color: #fff;
@@ -20,6 +22,16 @@
             border:1px solid #fff;
             transition: all 0.3s linear;
             box-shadow: 0px 5px 7px #162313;
+            @media (min-width:992px) {
+                padding: 2rem 1rem;
+            }
+            &-wrapper{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                justify-content: space-evenly;
+            }
             &-title {
                 font-size: 1.5rem;
                 text-transform: uppercase;

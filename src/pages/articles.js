@@ -7,9 +7,10 @@ const Articles = ({data}) => {
     const Articles = data.allStrapiArticle.nodes;
     const Article = data.strapiArticlePage
   return (
-    <div>
+    <div key={Article.title}>
       <div className="Heading-wrapper">
         <h3 className="Heading">{Article.title}</h3>
+      <div className="authors-details-description">{Article.description.data.description}</div>
         <CommonComponent data={Articles} PageSLug={Article.pageSlug} />
       </div>
     </div>
@@ -24,6 +25,11 @@ query MyQuery {
   strapiArticlePage {
     title
     pageSlug
+    description {
+      data {
+        description
+      }
+    }
   }
     allStrapiArticle {
       nodes {
@@ -34,6 +40,9 @@ query MyQuery {
           }
         }
         slug
+        image {
+          url
+        }
       }
     }
   }

@@ -7,10 +7,10 @@ const AuthorDetails = ({ data }) => {
   const articles = data.strapiAuthor.articles;
 
   return (
-    <div className="authors-details-container">
+    <div className="authors-details-container" key={title}>
       <h3 className="authors-details-title">{title}</h3>
       <div className="authors-details-description">{description.data.description}</div>
-      <CommonComponent data={articles}/>
+      <CommonComponent data={articles} PageSLug="articles"/>
       <div className="home-btn">
       <Link to='/'>Back to Home</Link>
       </div>
@@ -33,7 +33,9 @@ export const query = graphql`
       articles {
         title
         slug
-        image
+        image {
+          url
+        }
         description {
           data {
             description

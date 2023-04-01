@@ -97,7 +97,7 @@ pages.push({
 
   resultArticlePage.data.allStrapiArticle.edges.forEach(({ node }) => {
     createPage({
-      path: `${node.slug}`,
+      path: `/articles${node.slug}`,
       component: articleTemplate,
       context: {
         slug: node.slug,
@@ -107,7 +107,7 @@ pages.push({
 
   resultGenrePage.data.allStrapiGenre.edges.forEach(({ node }) => {
     createPage({
-      path: `${node.slug}`,
+      path: `/genres${node.slug}`,
       component: genreTemplate,
       context: {
         slug: node.slug,
@@ -117,7 +117,7 @@ pages.push({
 
   resultAuthorPage.data.allStrapiAuthor.edges.forEach(({ node }) => {
     createPage({
-      path: `${node.slug}`,
+      path: `/authors${node.slug}`,
       component: authorTemplate,
       context: {
         slug: node.slug,

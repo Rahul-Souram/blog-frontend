@@ -7,10 +7,10 @@ const GenreDetails = ({ data }) => {
   const articles = data.strapiGenre.articles;
 
   return (
-    <div className="genre-details-container">
+    <div className="genre-details-container" key={title}>
       <h3 className="genre-details-title">{title}</h3>
       <div className="genre-details-description">{description.data.description}</div>
-      <CommonComponent data={articles}/>
+      <CommonComponent data={articles} PageSLug="articles"/>
       <div className="home-btn">
       <Link to='/'>Back to Home</Link>
       </div>
@@ -33,7 +33,9 @@ export const query = graphql`
       articles {
         title
         slug
-        image
+        image {
+          url
+        }
         description {
           data {
             description
